@@ -1,10 +1,14 @@
-<h1>Books</h1>
+<p class="notice">
+    <%= flash[:notice] %>
+</p>
+
+<h1 class="i-heading">Books</h1>
 
 <table>
 
 <thead>
-    <th><p>Title</p></th>
-    <th><p>Body</p></th>
+    <th><p class= "i-title">Title</p></th>
+    <th><p class= "i-body">Body</p></th>
 </thead>
 
 <tbody>
@@ -12,9 +16,9 @@
   <tr>
     <td><span><%= book.title %></span></td>
     <td><span><%= book.body %></span></td>
-    <td><span><%= link_to "show", book_path(book.id) %></span></td>
-    <td><span><%= link_to "edit", edit_book_path(book) %></span></td>
-    <td><span><%= link_to "destroy", book_path(@book.id), method: :delete, "data-confirm" => "Are you sure?" %></span></td>
+    <td><span><%= link_to "Show", book_path(book.id) %></span></td>
+    <td><span><%= link_to "Edit", edit_book_path(book) %></span></td>
+    <td><span><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></span></td>
   </tr>
     <% end %>
 </tbody>
@@ -23,13 +27,37 @@
 
 
 
-<h1>New book</h1>
-<%= form_with model: @book do |f| %>
- <h4>Title</h4>
- <%= f.text_field :title %>
+<h2 class="i-newbook">New book</h2>
+ <% if @book.errors.any? %>
+<div class="error">
+ <h2 class="error-mes"><%= @book.errors.count %> errors prohibited this book from being saved:</h2>
 
- <h4>Body</h4>
- <%= f.text_area :body %>
+ <ul>
+     <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+     <% end %>
+ </ul>
+</div>
+<% end %>
 
- <%= f.submit 'Create Book' %>
+ <%= form_with model: @book do |f| %>
+<div class="form-box">
+ <div class="field">
+  <label for="form-name">Title</label>
+ </div>
+ <div class="field">
+  <div class="form"><%= f.text_field :title %></div>
+ </div>
+</div>
+
+<div class="form-box">
+ <div class="field">
+  <label for="form-name">Body</label>
+ </div>
+ <div class="field">
+  <div class="form"><%= f.text_area :body %></div>
+ </div>
+</div>
+
+ <p><%= f.submit 'Create Book',class:"btn" %></p>
  <% end %>

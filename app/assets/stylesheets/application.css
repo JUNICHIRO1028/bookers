@@ -13,3 +13,117 @@
  *= require_tree .
  *= require_self
  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 33px;
+  font-size:13px;
+  line-height: 18px;
+}
+
+h1, h2, p, a{
+  color: #333;
+}
+
+.top-h {
+  font-size: 26px;
+  margin: 17.42px 0;
+}
+
+.top-p {
+  margin: 33px;
+}
+
+a:hover {
+  color: white;
+  background-color: #000;
+}
+
+
+
+.i-heading, .edit {
+  font-size: 26px;
+  margin: 17.42px 0;
+}
+
+.i-title {
+  padding-bottom: 5px;
+}
+
+.i-body {
+  padding-bottom: 5px;
+}
+
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 33px;
+  white-space: nowrap;
+}
+
+.i-newbook {
+  font-size: 19.5px;
+  margin: 17.42px 0;
+}
+
+
+.btn {
+  padding: 1px 6px;
+}
+
+.show {
+  margin: 33px;
+}
+
+.notice {
+  color: green;
+  margin:33px;
+}
+
+.action {
+  margin-bottom: 10px;
+}
+
+.error {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+.error-mes {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+ul {
+  margin: 33px;
+  padding-left: 40px;
+}
+
+li {
+  display: 12px;
+  list-style: square;
+}
+
+.form-box {
+  margin-bottom: 10px;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
